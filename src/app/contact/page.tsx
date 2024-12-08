@@ -60,7 +60,7 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div className="flex items-start space-x-4 ml-4">
-              <FaMapMarkerAlt  />
+              <FaMapMarkerAlt/>
               <div>
                 <h3 className="font-semibold mb-1">Address</h3>
                 <p className="text-gray-600">236 5th SE Avenue, New York NY10000, United States</p>
@@ -68,7 +68,7 @@ export default function Contact() {
             </div>
 
             <div className="flex items-start space-x-4 ml-4">
-              <FaPhone  />
+              <FaPhone/>
               <div>
                 <h3 className="font-semibold mb-1">Phone</h3>
                 <p className="text-gray-600">Mobile: +(84) 546-6789</p>
@@ -77,7 +77,7 @@ export default function Contact() {
             </div>
 
             <div className="flex items-start space-x-4 ml-4">
-              <FaClock  />
+              <FaClock/>
               <div>
                 <h3 className="font-semibold mb-1">Working Time</h3>
                 <p className="text-gray-600">Monday-Friday: 9:00 - 22:00</p>

@@ -1,21 +1,20 @@
-"use client"
-import React, { useState } from 'react';
-import Image from 'next/image';
-import Header from '../components/Header';
-import { FaMapMarkerAlt, FaPhone, FaClock } from 'react-icons/fa';
-import Footer from '../components/Footer';
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { FaMapMarkerAlt, FaPhone, FaClock } from "react-icons/fa";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log(formData);
   };
 
@@ -28,20 +27,20 @@ export default function Contact() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
-              src="/shop1.png" // Place the background image in the "public" folder
+              src="/shop1.png"
               alt="Background"
-              layout="fill"
-              objectFit="cover"
-              quality={100}
-              className="opacity-90"
+              fill
+              className="object-cover opacity-90"
             />
           </div>
           {/* Overlay */}
           <div className="absolute inset-0 bg-white bg-opacity-15"></div>
           {/* Content */}
           <div className="relative text-center">
-            <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl text-gray-800">Contact</h1>
-            <p className="mt-2 text-lg sm:text-xl text-gray-600">Home {'>'} Contact</p>
+            <h1 className="text-3xl font-bold sm:text-4xl lg:text-5xl text-gray-800">
+              Contact
+            </h1>
+            <p className="mt-2 text-lg sm:text-xl text-gray-600">Home Contact</p>
           </div>
         </div>
       </section>
@@ -51,24 +50,27 @@ export default function Contact() {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-3">Get In Touch With Us</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            For more information about our products & services, please feel free to drop us an email. Our staff will
-            always be there to help you out. Let's get in touch!
+            For more information about our products & services, please feel free
+            to drop us an email. Our staff will always be there to help you out.
+            Let's get in touch!
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="flex items-start space-x-4 ml-4">
-              <FaMapMarkerAlt/>
+            <div className="flex items-start space-x-4">
+              <FaMapMarkerAlt className="text-xl text-gray-800 mt-1" />
               <div>
                 <h3 className="font-semibold mb-1">Address</h3>
-                <p className="text-gray-600">236 5th SE Avenue, New York NY10000, United States</p>
+                <p className="text-gray-600">
+                  236 5th SE Avenue, New York NY10000, United States
+                </p>
               </div>
             </div>
 
-            <div className="flex items-start space-x-4 ml-4">
-              <FaPhone/>
+            <div className="flex items-start space-x-4">
+              <FaPhone className="text-xl text-gray-800 mt-1" />
               <div>
                 <h3 className="font-semibold mb-1">Phone</h3>
                 <p className="text-gray-600">Mobile: +(84) 546-6789</p>
@@ -76,8 +78,8 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="flex items-start space-x-4 ml-4">
-              <FaClock/>
+            <div className="flex items-start space-x-4">
+              <FaClock className="text-xl text-gray-800 mt-1" />
               <div>
                 <h3 className="font-semibold mb-1">Working Time</h3>
                 <p className="text-gray-600">Monday-Friday: 9:00 - 22:00</p>
@@ -95,7 +97,9 @@ export default function Contact() {
                 placeholder="Abc"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
                 required
               />
             </div>
@@ -107,7 +111,9 @@ export default function Contact() {
                 placeholder="abc@def.com"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 required
               />
             </div>
@@ -119,7 +125,9 @@ export default function Contact() {
                 placeholder="This is optional"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={formData.subject}
-                onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, subject: e.target.value })
+                }
               />
             </div>
 
@@ -130,14 +138,16 @@ export default function Contact() {
                 rows={4}
                 className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, message: e.target.value })
+                }
                 required
               />
             </div>
 
             <button
               type="submit"
-              className="w-full py-3 px-6 border border-gray-500 text-gray-700 bg-transparent rounded-md hover:bg-gray-100 transition-colors duration-200"
+              className="w-full py-3 px-6 text-white bg-blue-500 rounded-md hover:bg-blue-600 transition duration-200"
             >
               Submit
             </button>
@@ -145,38 +155,34 @@ export default function Contact() {
         </div>
       </section>
 
-
-      {/* section 3 */}
-
-      <section>
-      <section>
-  <div className="bg-[#FAF4F4] py-8">
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div className="bg-[#FAF4F4] rounded-lg px-6 py-8 text-center">
-          <h3 className="text-lg font-extrabold mb-2">Free Delivery</h3>
-          <p className="text-gray-600">
-            for all orders over $50, consectetur adipiscing elit.
-          </p>
+      {/* Section 3: Extra Information */}
+      <section className="bg-[#FAF4F4] py-8">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="bg-white rounded-lg px-6 py-8 text-center shadow-md">
+              <h3 className="text-lg font-extrabold mb-2">Free Delivery</h3>
+              <p className="text-gray-600">
+                For all orders over $50, consectetur adipiscing elit.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg px-6 py-8 text-center shadow-md">
+              <h3 className="text-lg font-extrabold mb-2">90 Days Return</h3>
+              <p className="text-gray-600">
+                If goods have problems, consectetur adipiscing elit.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg px-6 py-8 text-center shadow-md">
+              <h3 className="text-lg font-extrabold mb-2">Secure Payment</h3>
+              <p className="text-gray-600">
+                100% secure payment, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="bg-[#FAF4F4] rounded-lg px-6 py-8 text-center">
-          <h3 className="text-lg font-extrabold mb-2">90 Days Return</h3>
-          <p className="text-gray-600">
-            if goods have problems, consectetur adipiscing elit.
-          </p>
-        </div>
-        <div className="bg-[#FAF4F4] rounded-lg px-6 py-8 text-center">
-          <h3 className="text-lg font-extrabold mb-2">Secure Payment</h3>
-          <p className="text-gray-600">
-            100% secure payment, consectetur adipiscing elit.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<Footer/>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

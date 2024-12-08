@@ -1,8 +1,7 @@
-"use client"
-import React, { useState, useEffect, useRef } from 'react';
-import { FiUser, FiShoppingCart, FiSearch, FiHeart } from 'react-icons/fi';
-
-import Link from 'next/link';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
+import { FiUser, FiShoppingCart, FiSearch, FiHeart } from "react-icons/fi";
+import Link from "next/link";
 
 const Header = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,63 +9,59 @@ const Header = () => {
 
   // Close the menu when clicking outside
   useEffect(() => {
-    const handleClickOutside = (event: { target: any; }) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setMobileMenuOpen(false);
       }
     };
 
     if (isMobileMenuOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isMobileMenuOpen]);
 
   return (
     <header className="bg-[#FBEBB5] shadow-md fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="flex justify-between items-center py-4">
-        
-          <div className="text-lg font-bold text-gray-800"></div>
-         
+        <div className="flex justify-between items-center py-4">
+          <div className="text-lg font-bold text-gray-800">Logo</div>
 
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex space-x-8">
-        <Link href="/">
-          <span className="text-gray-700 hover:text-black font-medium cursor-pointer">
-            Home
-          </span>
-        </Link>
-        <Link href="/shop">
-          <span className="text-gray-700 hover:text-black font-medium cursor-pointer">
-            Shop
-          </span>
-        </Link>
-        <Link href="#about">
-          <span className="text-gray-700 hover:text-black font-medium cursor-pointer">
-            About
-          </span>
-        </Link>
-        <Link href="/contact">
-          <span className="text-gray-700 hover:text-black font-medium cursor-pointer">
-            Contact
-          </span>
-        </Link>
-      </nav>
+            <Link href="/">
+              <span className="text-gray-700 hover:text-black font-medium cursor-pointer">
+                Home
+              </span>
+            </Link>
+            <Link href="/shop">
+              <span className="text-gray-700 hover:text-black font-medium cursor-pointer">
+                Shop
+              </span>
+            </Link>
+            <Link href="#about">
+              <span className="text-gray-700 hover:text-black font-medium cursor-pointer">
+                About
+              </span>
+            </Link>
+            <Link href="/contact">
+              <span className="text-gray-700 hover:text-black font-medium cursor-pointer">
+                Contact
+              </span>
+            </Link>
+          </nav>
+
           {/* Icons */}
           <div className="flex items-center gap-2 space-x-4">
-          <Link href="/login">
-            
-            <FiUser  />
-            
-          </Link>
-            <FiSearch  />
-            <FiHeart  />
-            <FiShoppingCart  />
-            
+            <Link href="/login">
+              <FiUser />
+            </Link>
+            <FiSearch />
+            <FiHeart />
+            <FiShoppingCart />
           </div>
 
           {/* Mobile Menu Button */}
@@ -99,30 +94,26 @@ const Header = () => {
             ref={menuRef}
             className="md:hidden mt-4 bg-white shadow-lg rounded-lg"
           >
-            <a
-              href="#home"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-black font-medium"
-            >
-              Home
-            </a>
-            <a
-              href="/shop"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-black font-medium"
-            >
-              Shop
-            </a>
-            <a
-              href="#about"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-black font-medium"
-            >
-              About
-            </a>
-            <a
-              href="/contact"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-black font-medium"
-            >
-              Contact
-            </a>
+            <Link href="/">
+              <span className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-black font-medium">
+                Home
+              </span>
+            </Link>
+            <Link href="/shop">
+              <span className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-black font-medium">
+                Shop
+              </span>
+            </Link>
+            <Link href="#about">
+              <span className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-black font-medium">
+                About
+              </span>
+            </Link>
+            <Link href="/contact">
+              <span className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-black font-medium">
+                Contact
+              </span>
+            </Link>
           </nav>
         )}
       </div>

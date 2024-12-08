@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Image from 'next/image';
 import { FiFilter, FiGrid, FiList, FiChevronDown } from 'react-icons/fi';
 import Footer from '../components/Footer';
-import Link from 'next/link';
+
 
 const SearchBar = () => {
   const [showResults, setShowResults] = useState(8);

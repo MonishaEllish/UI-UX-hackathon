@@ -1,6 +1,7 @@
 import React from "react";
 import { FaClock } from "react-icons/fa"; // For time
 import { FaCalendarAlt } from "react-icons/fa"; // For date
+import Image from "next/image";
 
 function OurBlogs() {
   const blogs = [
@@ -45,7 +46,7 @@ function OurBlogs() {
             >
               {/* Image Section */}
               <div className="w-[393px] h-[393px] mx-auto mb-4">
-                <img
+                <Image
                   src={blog.image}
                   alt={blog.title}
                   className="w-full h-full object-cover rounded"

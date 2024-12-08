@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
 import { FiHeart } from 'react-icons/fi';
-import Header from '../components/Header';
+import Image from 'next/image'
+
 import Footer from '../components/Footer';
 
 
@@ -29,7 +30,7 @@ export default function ProductDetail() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
          
           <div className="bg-[#FFF9E5] rounded-lg h-[500px] flex items-center justify-center">
-          <img
+          <Image
         src="/item15.png"
         alt="Asgaard Sofa"
         className="max-w-full max-h-full rounded-lg object-cover"
